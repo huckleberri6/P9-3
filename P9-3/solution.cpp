@@ -12,20 +12,16 @@ int main()
 {
 	srand(time(0));
 	int values[SIZE];
-	for (int i = 0; i < SIZE; i++)
-	{
-		int n = rand() % 6 + 1;
-		values[i] = n;
-	}
 
-	while (!hasRun(values, SIZE))
+	do
 	{
 		for (int i = 0; i < SIZE; i++)
 		{
 			int n = rand() % 6 + 1;
 			values[i] = n;
 		}
-	}
+	} while (!hasRun(values, SIZE));
+
 	displayRun(values, SIZE);
 }
 
