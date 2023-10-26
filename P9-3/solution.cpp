@@ -6,6 +6,7 @@ const int SIZE = 20;
 
 // function prototypes
 void displayRun(int values[], int size);
+bool hasRun(int values[], int size);
 
 int main()
 {
@@ -17,6 +18,10 @@ int main()
 		values[i] = n;
 	}
 	displayRun(values, SIZE);
+
+	cout << endl;
+	bool b = hasRun(values, SIZE);
+	cout << b;
 }
 
 void displayRun(int values[], int size)
@@ -36,4 +41,14 @@ void displayRun(int values[], int size)
 		else
 			cout << values[i] << " ";
 	}
+}
+
+bool hasRun(int values[], int size)
+{
+	for (int i = 0; i < size - 1; i++)
+	{
+		if (values[i] == values[i + 1])
+			return true;
+	}
+	return false;
 }
