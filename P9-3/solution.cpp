@@ -17,11 +17,16 @@ int main()
 		int n = rand() % 6 + 1;
 		values[i] = n;
 	}
-	displayRun(values, SIZE);
 
-	cout << endl;
-	bool b = hasRun(values, SIZE);
-	cout << b;
+	while (!hasRun(values, SIZE))
+	{
+		for (int i = 0; i < SIZE; i++)
+		{
+			int n = rand() % 6 + 1;
+			values[i] = n;
+		}
+	}
+	displayRun(values, SIZE);
 }
 
 void displayRun(int values[], int size)
