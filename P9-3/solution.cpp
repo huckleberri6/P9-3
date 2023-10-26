@@ -20,9 +20,21 @@ int main()
 			int n = rand() % 6 + 1;
 			values[i] = n;
 		}
+
+		if (hasRun(values, SIZE))
+		{
+			cout << "has run: ";
+			displayRun(values, SIZE);
+		}
+		else
+		{
+			cout << "has no run: ";
+			for (int i = 0; i < SIZE; i++)
+				cout << values[i] << " ";
+			cout << endl;
+		}
 	} while (!hasRun(values, SIZE));
 
-	displayRun(values, SIZE);
 }
 
 void displayRun(int values[], int size)
@@ -39,8 +51,13 @@ void displayRun(int values[], int size)
 			}
 			cout << values[i] << ") ";
 		}
-		else
+		else if (i < 18)
 			cout << values[i] << " ";
+		else
+		{
+			cout << values[i] << " ";
+			cout << values[i + 1];
+		}
 	}
 }
 
